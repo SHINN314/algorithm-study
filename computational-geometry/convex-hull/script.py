@@ -32,8 +32,9 @@ def calculate_convex_hull(p):
             p_l2 = lu[-2, :]
             p_l1 = lu[-1, :]
 
-            signed_area = (p_l2[0] - p_l1[0]) * (p_l3[1] - p_l2[1]) - (p_l2[1] - p_l1[1]) * (p_l3[0] - p_l2[0])
+            signed_area = (p_l3[0] - p_l2[0]) * (p_l2[1] - p_l1[1]) - (p_l3[1] - p_l2[1]) * (p_l2[0] - p_l1[0])
 
+            # 右回りならwhileを抜ける
             if signed_area < 0:
                 break
 
