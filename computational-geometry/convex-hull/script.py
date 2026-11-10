@@ -44,7 +44,6 @@ def calculate_convex_hull(p):
     ll = np.array([p[-1], p[-2]])
 
     for i in reversed(range(p_num - 2)):
-        print(f"Add {i + 1}th point ({p[i]}) to ll")
         ll = np.vstack([ll, p[i]])
 
         while (ll.shape[0] >= 3):
@@ -59,7 +58,6 @@ def calculate_convex_hull(p):
             if signed_area < 0:
                 break
 
-            print(f"Delete {ll[-2]} from ll")
             ll = np.delete(ll, -2, axis=0)
 
     # 端点における重複を削除
